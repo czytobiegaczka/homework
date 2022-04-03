@@ -16,6 +16,8 @@ def end_day(start, count):
         return 7
 
 
+start_day = 0
+days_of_repair = 0
 days_of_week = {
     1: 'poniedziałek',
     2: 'wtorek',
@@ -28,8 +30,6 @@ days_of_week = {
 
 print('NAPRAWA OBUWIA')
 print('~~~~~~~~~~~~~~~\n')
-start_day = 0
-days_of_repair = 0
 
 while start_day not in days_of_week.keys():
     try:

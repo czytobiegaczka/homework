@@ -7,23 +7,49 @@ Wzór Herona: √ p(p−a)( p−b)( p−c) , gdzie p jest połową obwodu: (a+b+
 Pierwiastek kwadratowy to funkcja sqrt z modułu math, można też podnieść do potęgi 0.5.
 '''
 
-def is_sum_of_one_and_two_more_than_three(one, two, three):
-    if one == 0 or two == 0 or three == 0 :return False
-    if one + two > three : return True
-    if one + three > two : return True
-    if two + three > one : return  True
-    return False
+from math import sqrt
 
-side_a = 0
-side_b = 0
-side_c = 0
+
+def add_side(_side):
+    while True:
+        try:
+            new_side = float(input(f'bok {_side} = '))
+            if new_side == 0:
+                print('\nKONIEC PROGRAMU- DO ZOBACZENIA')
+                exit()
+            elif new_side < 0:
+                print('dopuszczalne tylko liczby większe od 0')
+            else:
+                return new_side
+        except Exception:
+            print('dopuszczalne tylko liczby')
+
+
+
+def is_triangle(_triangle):
+    one, two, three = _triangle
+    if one + two > three and one + three > two and two + three > one:
+        return True
+    else:
+        print(f'boki o długościach: {one:.2f}, {two:.2f}, {three:.2f} - nie tworzą trójkąta')
+        return False
+
+
+triangle = []
 
 print('POLE TRÓJKĄTA')
+print('``````````````')
+print('podaj wymiary trójkąta ( 0 - koniec obliczeń): \n')
 
-while not is_sum_of_one_and_two_more_than_three(side_a, side_b, side_c):
-    try:
-        side_a = float(input(f'długość bok a: '))
-        if side_a <= 0:
-            print('dopuszczalne tylko liczby większe od 0')
-    except Exception:
-        print('dopuszczalne tylko liczby większe od 0')
+while True:
+    for side in range(1, 4):
+        triangle.append(add_side(side))
+    if is_triangle(triangle):
+        break
+    else:
+        triangle = []
+
+a, b, c = triangle
+p = (a + b + c) / 2
+
+print(f'\nPole trójkąta o bokach: {a:.2f}, {b:.2f}, {c:.2f} wynosi: {sqrt(p * (p - a) * (p - b) * (p - c)):.2f} ')

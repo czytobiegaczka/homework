@@ -10,10 +10,7 @@ wersję, w której program wypisuje dzień odbioru słownie.
 
 
 def end_day(start, count):
-    if (start + count) % 7 > 0:
-        return (start + count) % 7
-    else:
-        return 7
+    return (start - 1 +count) % 7 +1
 
 
 start_day = 0
@@ -31,7 +28,7 @@ days_of_week = {
 print('NAPRAWA OBUWIA')
 print('~~~~~~~~~~~~~~~\n')
 
-while start_day not in days_of_week.keys():
+while start_day not in days_of_week:
     try:
         start_day = int(input(f'dzień dostarczenia obuwia do naprawy {days_of_week} :'))
     except Exception:

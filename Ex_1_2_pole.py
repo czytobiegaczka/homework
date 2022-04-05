@@ -25,7 +25,6 @@ def add_side(_side):
             print('dopuszczalne tylko liczby')
 
 
-
 def is_triangle(_triangle):
     one, two, three = _triangle
     if one + two > three and one + three > two and two + three > one:

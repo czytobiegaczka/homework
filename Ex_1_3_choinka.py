@@ -22,8 +22,9 @@ while lines <= 0:
         print('możliwe tylko liczby całkowite dodatnie')
 
 tree = ''
-napis = [lines]
 for count in range(1, lines + 1):
     tree = (lines - count) * ' '
     tree += ((count * 2) - 1) * '*'
     print(tree)
+
+

@@ -20,7 +20,10 @@ from random import randint
 
 def plansza(pozycja, symbol):
     x, y = pozycja
-    linia = [' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ', ' - ']
+    linia = []
+    for i in range(10):
+        linia.append(' - ')
+
     for i in range(11, 1, -1):
         if i != y + 1:
             for znak in linia:
@@ -93,11 +96,10 @@ while True:
                 break
 
             if ilosc_prob % 5 != 0:
+                plansza(nowa_pozycja, ' X ')
                 if zly_kierunek(pozycja_gracza, nowa_pozycja):
-                    plansza(nowa_pozycja, ' X ')
                     print(f'twoja pozycja: {nowa_pozycja} -:-( idziesz w złym kierunku')
                 else:
-                    plansza(nowa_pozycja, ' X ')
                     print(f'twoja pozycja: {nowa_pozycja} - :-) jesteś coraz bliżej')
             else:
                 print('¯\_(ツ)_/¯ - brak podpowiedzi')

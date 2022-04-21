@@ -22,14 +22,16 @@ def suma_cyfr(n):
         suma += int(cyfra)
     return suma
 
-while True:
-    try:
-        liczba = input('podaj liczbę (koniec - pusty ciąg): ')
-        if liczba == '':
-            break
-        print(f'suma cyfr liczby: {liczba} wynosi: {suma_cyfr(liczba)}')
-    except Exception as e:
-        print('dozwolone tylko liczby calkowite')
+def main():
+    while True:
+        try:
+            liczba = input('podaj liczbę (koniec - pusty ciąg): ')
+            if liczba == '':
+                break
+            print(f'suma cyfr liczby: {liczba} wynosi: {suma_cyfr(liczba)}')
+        except Exception as e:
+            print('dozwolone tylko liczby calkowite')
 
 
-
+if __name__ == '__main__':
+   main()

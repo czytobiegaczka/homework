@@ -37,13 +37,33 @@ def fib_liczba(n):
 
     return licz2
 
+def fib_gen(n):
+    licz1 = 0
+    licz2 = 1
+    for count in range(n+1):
+        if count == 0:
+            licz3 = 0
+        elif count == 1:
+            licz3 = 1
+        else:
+            licz3 = licz1 + licz2
+        yield licz3
+        licz1 = licz2
+        licz2 = licz3
+
 def main():
     print('CIĄG FIBONACCIEGO')
     liczba = int(input('podaj liczbę: '))
+    generator = fib_gen(liczba)
     print(f'{liczba} elementem ciągu Fibonacciego jest : {fib_liczba(liczba)}')
     print(f'{liczba} kolejnych elementów ciągu Fibonacciego:')
     for i in range(liczba+1):
         print(f'F({i}) - {fib_ciag(liczba)[i]}')
+    lista = [x for x in fib_gen(liczba)]
+    print(lista)
+    print(50*'-')
+    for el in generator:
+        print(el)
 
 if __name__ == '__main__':
    main()

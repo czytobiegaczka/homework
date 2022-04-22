@@ -7,7 +7,22 @@ Istnieją tu rozwiązania bardziej i mniej wydajne ;-) – do przemyślenia.
 '''
 
 def trójki_pitagorejskie(n):
-    pass
+    # wersja 1 - pętle
+    # zbior = []
+    # for a in range(n-1):
+    #     for b in range (a+1, n):
+    #         for c in range(b+1, n+1):
+    #             if a*a + b*b == c*c:
+    #                 zbior.append((a, b, c))
+    # return zbior
+    '''
+    wersja 2 - wyrazenie listotwórcze
+    :param n: przeszukiwany zakres liczb
+    :return: listę tupli liczb tworzacych trójkąty pitagorejskie
+    '''
+    return [(a, b, c) for a in range(n-1) for b in range(a+1, n) for c in range(b+1, n+1) if a*a + b*b == c*c ]
+
+
 
 def main():
     print('Trójki Pitagorejskie')
@@ -16,13 +31,12 @@ def main():
             liczba = input('podaj liczbę większą od 0 (koniec - pusty ciąg): ')
             if liczba == '':
                 break
-            if int(liczba) >= 1:
-                if trójki_pitagorejskie(int(liczba)):
-                    print(f'{liczba} - jest liczbą pierwszą')
-                else:
-                    print(f'{liczba} - nie jest liczbą pierwszą')
+            elif int(liczba) >= 1:
+                print(trójki_pitagorejskie(int(liczba)))
+            else:
+                print('możliwe tylko liczby całkowite większe od 0')
         except Exception as e:
-            print('dozwolone tylko liczby calkowite wieksze od 1')
+            print(e)
 
 
 if __name__ == '__main__':

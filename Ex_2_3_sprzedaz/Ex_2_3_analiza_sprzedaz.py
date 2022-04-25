@@ -48,7 +48,7 @@ def licznik_transakcji_miasto(lista_transakcji, jakie_miasto):
     wyliczenie ilości, sumy oraz średniej ilości transakcji dla wybranego miasta
     :param lista_transakcji:
     :param jakie_miasto:
-    :return: ilość, śuma, śrenia transakcji dla wybranego miasta
+    :return: ilość, suma, śrenia transakcji dla wybranego miasta
     '''
     ilosc = 0
     suma = 0
@@ -70,7 +70,6 @@ def wyswietl_info_dla_miasta(lista_transakcji):
 
     while jakie_miasto not in miasta:
         jakie_miasto = input('podaj nazwę miasta: ').upper()
-
 
     ilosc_transakcji, suma_transakcji, srednia_transakcji = licznik_transakcji_miasto(lista_transakcji, jakie_miasto)
     print(f'ilosc transakcji: {ilosc_transakcji:.2f}')

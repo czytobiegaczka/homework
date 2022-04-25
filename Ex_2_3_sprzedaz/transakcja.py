@@ -2,7 +2,8 @@ class Transakcja:
     '''
     obiekt tej klasy reprezentuje jedną transakcję
     '''
-    def __init__(self, id, data, miasto, sklep, kategoria, towar, cena, sztuk) :
+
+    def __init__(self, id, data, miasto, sklep, kategoria, towar, cena, sztuk):
         self.id = id
         self.data = data
         self.miasto = miasto

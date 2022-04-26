@@ -16,7 +16,7 @@ def wczytaj_plik(sciezka):
     with open(sciezka, mode='r', encoding='utf-8') as plik:
         tresc_bez = plik.read()
 
-    print(tresc_bez)
+    # print(tresc_bez)
     tresc_z = tresc_bez.replace('\n', ' ')
     for znak in znaki_specjalne:
         tresc_bez = tresc_z.replace(znak, '')

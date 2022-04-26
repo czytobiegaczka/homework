@@ -18,10 +18,12 @@ def policz_wybrane_slowo(tresc, slowo):
 
 def main():
     slowa_pan_tadeusz = wczytaj_plik('pan-tadeusz.txt')
-    print(slowa_pan_tadeusz)
+    # print(slowa_pan_tadeusz)
 
     szukane_slowo = input('Podaj słowo: ')
     print(f'Słowo {szukane_slowo} występuje {policz_wybrane_slowo(slowa_pan_tadeusz, szukane_slowo)} razy.')
+
+
 
 
 

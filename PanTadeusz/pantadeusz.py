@@ -12,14 +12,16 @@ def wczytaj_plik(sciezka):
     :return: lista obiektów Transakcja
     '''
 
-    znaki_specjalne = {'—', '.', ',', ':', ';', '(', ')', '!', '...', '…'}
+    znaki_specjalne = {'—', '.', ',', ':', ';', '(', ')', '!', '...', '…', '«', '»', ';', '*', '?'}
     with open(sciezka, mode='r', encoding='utf-8') as plik:
         tresc_bez = plik.read()
-        tresc_z = tresc_bez.replace('\n', ' ')
-        for znak in znaki_specjalne:
-            tresc_bez = tresc_z.replace(znak, '')
-            tresc_z = tresc_bez
-        tresc = tresc_bez
-        return tresc.split(' ')
+
+    print(tresc_bez)
+    tresc_z = tresc_bez.replace('\n', ' ')
+    for znak in znaki_specjalne:
+        tresc_bez = tresc_z.replace(znak, '')
+        tresc_z = tresc_bez
+    tresc = tresc_bez
+    return tresc.split(' ')
 
 

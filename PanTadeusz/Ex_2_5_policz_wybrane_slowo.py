@@ -11,14 +11,14 @@ from pantadeusz import *
 def policz_wybrane_slowo(tresc, slowo):
     licznik = 0
     for wyraz in tresc:
-        if wyraz.upper() == slowo.upper():
+        if wyraz == slowo:
             licznik +=1
     return licznik
 
 
 def main():
     slowa_pan_tadeusz = wczytaj_plik('pan-tadeusz.txt')
-    # print(slowa_pan_tadeusz)
+    print(slowa_pan_tadeusz)
 
     szukane_slowo = input('Podaj słowo: ')
     print(f'Słowo {szukane_slowo} występuje {policz_wybrane_slowo(slowa_pan_tadeusz, szukane_slowo)} razy.')

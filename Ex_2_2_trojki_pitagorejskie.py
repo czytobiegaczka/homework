@@ -22,6 +22,17 @@ def trójki_pitagorejskie(n):
     '''
     return [(a, b, c) for a in range(n-1) for b in range(a+1, n) for c in range(b+1, n+1) if a*a + b*b == c*c ]
 
+def trójki_pitagorejskie1(n):
+    zbior = []
+    for a in range(1,n//3):
+        print(a)
+        for b in range(a+1, n//2):
+            c = n - a - b
+            if a*a + b*b == c*c:
+                print(f'{a}, {b}, {c}')
+                zbior.append((a, b, c))
+    return zbior
+
 
 
 def main():
@@ -32,7 +43,7 @@ def main():
             if liczba == '':
                 break
             elif int(liczba) >= 1:
-                print(trójki_pitagorejskie(int(liczba)))
+                print(trójki_pitagorejskie1(int(liczba)))
             else:
                 print('możliwe tylko liczby całkowite większe od 0')
         except Exception as e:

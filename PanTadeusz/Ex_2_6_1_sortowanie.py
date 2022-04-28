@@ -27,8 +27,8 @@ def main():
     lista_slow_alfab = sorted(licznik_malych_slow.items(), key=operator.itemgetter(0))
     posortowane_alfab = dict(lista_slow_alfab)
 
-    for slowo in posortowane_alfab:
-        print(f'{slowo:30} -> {posortowane_alfab[slowo]:10}')
+    for slowo in licznik_malych_slow:
+        print(f'{slowo:30} -> {licznik_malych_slow[slowo]:10}')
 
     lista_slow_ilosc = sorted(licznik_malych_slow.items(), key=operator.itemgetter(1))
     posortowane_ilosc = dict(lista_slow_ilosc)

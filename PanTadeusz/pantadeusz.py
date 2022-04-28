@@ -14,14 +14,12 @@ def wczytaj_plik(sciezka):
 
     znaki_specjalne = {'—', '.', ',', ':', ';', '(', ')', '!', '...', '…', '«', '»', ';', '*', '?'}
     with open(sciezka, mode='r', encoding='utf-8') as plik:
-        tresc_bez = plik.read()
+        tresc = plik.read()
 
-    # print(tresc_bez)
-    tresc_z = tresc_bez.replace('\n', ' ')
+    tresc = tresc.replace('\n',' ')
     for znak in znaki_specjalne:
-        tresc_bez = tresc_z.replace(znak, '')
-        tresc_z = tresc_bez
-    tresc = tresc_bez
+        tresc = tresc.replace(znak, '')
+
     return tresc.split(' ')
 
 

@@ -20,7 +20,7 @@ def trójki_pitagorejskie(n):
     :param n: przeszukiwany zakres liczb
     :return: listę tupli liczb tworzacych trójkąty pitagorejskie
     '''
-    return [(a, b, c) for a in range(n-1) for b in range(a+1, n) for c in range(b+1, n+1) if a*a + b*b == c*c ]
+    return [(a, b, c) for a in range(n-1) for b in range(a+1, n) for c in range(b+1, n+1) if a*a + b*b == c*c]
 
 def trójki_pitagorejskie1(n):
     zbior = []

@@ -20,21 +20,19 @@ def policz_wszystkie_male_slowa(tresc):
     return slowa
 
 def main():
-    slowa_pan_tadeusz = wczytaj_plik('pan-tadeusz.txt')
+    slowa_pan_tadeusz = wczytaj_plik_posortowany('pan-tadeusz.txt')
 
-    licznik_malych_slow = policz_wszystkie_male_slowa(slowa_pan_tadeusz)
+    print('Posortowany alfabetycznie licznik małych słów: ')
 
-    lista_slow_alfab = sorted(licznik_malych_slow.items(), key=operator.itemgetter(0))
-    posortowane_alfab = dict(lista_slow_alfab)
+    for slowo, ilosc in policz_wszystkie_male_slowa(slowa_pan_tadeusz).items():
+        print(f'{slowo:30} -> {ilosc:10}')
 
-    for slowo in licznik_malych_slow:
-        print(f'{slowo:30} -> {licznik_malych_slow[slowo]:10}')
+    print('Posortowany wg liczby wystąpień licznik małych słów: ')
 
-    lista_slow_ilosc = sorted(licznik_malych_slow.items(), key=operator.itemgetter(1))
-    posortowane_ilosc = dict(lista_slow_ilosc)
+    lista_slow_ilosc = sorted(policz_wszystkie_male_slowa(slowa_pan_tadeusz).items(), key=operator.itemgetter(1))
 
-    for slowo in posortowane_ilosc:
-        print(f'{slowo:30} -> {posortowane_ilosc[slowo]:10}')
+    for slowo, ilosc in dict(lista_slow_ilosc).items():
+        print(f'{slowo:30} -> {ilosc:10}')
 
 
 if __name__ == '__main__':

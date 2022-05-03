@@ -22,4 +22,19 @@ def wczytaj_plik(sciezka):
 
     return tresc.split(' ')
 
+import locale
 
+locale.setlocale(locale.LC_ALL, 'Polish')
+def wczytaj_plik_posortowany(sciezka):
+    znaki_specjalne = {'—', '.', ',', ':', ';', '(', ')', '!', '...', '…', '«', '»', ';', '*', '?'}
+    with open(sciezka, mode='r', encoding='utf-8') as plik:
+        tresc = plik.read()
+
+    tresc = tresc.replace('\n',' ')
+    for znak in znaki_specjalne:
+        tresc = tresc.replace(znak, '')
+
+    tresc_posortowana = tresc.split(' ')
+    tresc_posortowana.sort(key=locale.strxfrm)
+
+    return tresc_posortowana

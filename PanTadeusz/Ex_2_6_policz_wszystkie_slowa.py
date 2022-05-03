@@ -20,7 +20,7 @@ def policz_wszystkie_slowa(tresc):
     return slowa
 
 def main():
-    slowa_pan_tadeusz = wczytaj_plik('pan-tadeusz.txt')
+    slowa_pan_tadeusz = wczytaj_plik_posortowany('pan-tadeusz.txt')
     # print(slowa_pan_tadeusz)
 
     licznik_slow = policz_wszystkie_slowa(slowa_pan_tadeusz)
